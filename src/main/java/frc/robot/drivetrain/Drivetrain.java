@@ -7,8 +7,9 @@
 
 package frc.robot.drivetrain;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * Add your docs here.
@@ -23,9 +24,7 @@ public class Drivetrain extends Subsystem {
     left_primary = new Spark(0);
     left_secondary = new Spark(1);
     right_primary = new Spark(2);
-    right_secondary = new Spark(3);
-
-    
+    right_secondary = new Spark(3);    
   }
 
   @Override

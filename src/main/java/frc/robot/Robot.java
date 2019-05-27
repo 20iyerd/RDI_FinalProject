@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import frc.robot.drivetrain.Drivetrain;
+import frc.robot.drivetrain.ArcadeDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,7 +19,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
  * project.
  */
 public class Robot extends TimedRobot {
-  
+  public static Drivetrain drivetrain = new Drivetrain();
 
   /**
    * This function is run when the robot is first started up and should be
@@ -25,7 +27,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    
   }
 
   /**
