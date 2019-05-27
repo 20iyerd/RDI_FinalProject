@@ -24,7 +24,12 @@ public class Drivetrain extends Subsystem {
     left_primary = new Spark(0);
     left_secondary = new Spark(1);
     right_primary = new Spark(2);
-    right_secondary = new Spark(3);    
+    right_secondary = new Spark(3);
+    
+    left_primary.setInverted(true); //TODO: check!
+    left_secondary.setInverted(true);
+    right_primary.setInverted(false);
+    right_secondary.setInverted(false);
   }
 
   @Override
