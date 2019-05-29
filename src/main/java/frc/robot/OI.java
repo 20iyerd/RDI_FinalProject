@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.drivetrain.Drivetrain;
 import frc.robot.drivetrain.ArcadeDrive;
 
 /**

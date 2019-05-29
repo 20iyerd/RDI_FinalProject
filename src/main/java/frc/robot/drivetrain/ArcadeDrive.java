@@ -27,10 +27,14 @@ public class ArcadeDrive extends Command {
   @Override
   protected void execute() {
     //normal joystick arcade drive    
-    double y = Helper.deadband(-OI.driver.getRawAxis(1),0.1); //TODO: do we want to use Launchpad + buttons?
-    double x = Helper.deadband(-OI.driver.getRawAxis(4),0.1); //TODO: check these numbers
+    // double y = Helper.deadband(-OI.driver.getRawAxis(1),0.1); //TODO: do we want to use Launchpad + buttons?
+    // double x = Helper.deadband(-OI.driver.getRawAxis(4),0.1); //TODO: check these numbers
 
-    Robot.drivetrain.setSpeed(0.75*(y-x), 0.75*(y+x));
+
+    double r = -OI.driver.getRawAxis(1);
+    double l = -OI.driver.getRawAxis(5);
+
+    Robot.drivetrain.setSpeed(0.5*l,0.5*r);
     //=============================================================================
     //Launchpad stuff if we have time:
     /*

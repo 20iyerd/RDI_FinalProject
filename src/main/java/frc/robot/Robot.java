@@ -8,8 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.drivetrain.Drivetrain;
-import frc.robot.drivetrain.ArcadeDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,7 +27,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    OI.init();
+    
   }
 
   /**
@@ -40,6 +40,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    Scheduler.getInstance().run();
   }
 
   /**
@@ -55,6 +56,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    OI.init();
+
     
   }
 
@@ -63,14 +66,20 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    
+
+    Scheduler.getInstance().run();
   }
 
+  @Override
+  public void teleopInit() {
+    OI.init();
+  }
   /**
    * This function is called periodically during operator control.
    */
   @Override
   public void teleopPeriodic() {
+    Scheduler.getInstance().run();
   }
 
   /**
@@ -78,5 +87,16 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    Scheduler.getInstance().run();
+  }
+
+  @Override
+  public void disabledInit(){
+
+  }
+
+  @Override
+  public void disabledPeriodic(){
+    Scheduler.getInstance().run();
   }
 }
